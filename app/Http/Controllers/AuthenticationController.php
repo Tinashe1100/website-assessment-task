@@ -38,7 +38,7 @@ class AuthenticationController extends Controller
         ]);
 
         User::create($data);
-        return redirect('/signin');
+        return redirect('/login');
     }
     /**
      * show login form

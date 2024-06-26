@@ -25,22 +25,33 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard/welcome', [
-        'cta' => CallToAction::all(),
-    ]);
+// Route::get('/dashboard', function () {
+//     return view('dashboard/welcome', [
+//         'cta' => CallToAction::all(),
+//     ]);
+// })->middleware('auth')->name('/login');
+
+// Group middleware dashboard routing
+Route::middleware('auth')->group(function () {
+    // show dashboard
+    Route::get('/dashboard', function () {
+        return view('dashboard/welcome', [
+            'cta' => CallToAction::all(),
+        ]);
+    });
 });
 
 Route::controller(AuthenticationController::class)->group(function () {
     Route::get('/register', 'create');
     Route::post('/create-account', 'store');
-    Route::get('/signin', 'login');
-    Route::post('/login', 'authenticate');
+    Route::get('/login', 'login')->name('login');
+    Route::post('/authenticate', 'authenticate');
 });
 
 Route::controller(HomeController::class)->group(function () {
-    Route::get('/home-page', 'index');
-    Route::get('/edit-home', 'edit');
+    Route::get('/dashboard/home-page', 'index');
+    Route::get('/dashboard/edit-home/{home}', 'edit');
+    Route::put('/dashboard/update-home/{home}', 'update');
 });
 
 Route::controller(AboutController::class)->group(function () {
@@ -49,8 +60,8 @@ Route::controller(AboutController::class)->group(function () {
 });
 
 Route::controller(ServiceController::class)->group(function () {
-    Route::get('/services-page', 'index');
-    Route::get('/add-service', 'create');
+    Route::get('/dashboard/services-page', 'index');
+    Route::get('/dashboard/add-service', 'create');
     Route::post('/create-service', 'store');
     Route::get('/edit-service/{service}', 'edit');
     Route::put('/update-service/{service}', 'update');

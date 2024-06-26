@@ -9,7 +9,7 @@
                         <div class="text-center">
                             <h1 class="h4 text-gray-900 mb-4">Account Login</h1>
                         </div>
-                        <form class="form-group user row gy-3" method="post" action="/login">
+                        <form class="form-group user row gy-3" method="post" action="/authenticate">
                             @csrf
                             <div class="col-12 my-2">
                                 <input type="email" class="form-control form-control-user" id="exampleInputEmail"
@@ -51,7 +51,7 @@
                             <a class="small" href="forgot-password.html">Forgot Password?</a>
                         </div> --}}
                         <div class="text-center">
-                            <a class="small" href="login.html">Already have an account? Login!</a>
+                            <a class="small" href="register">Already have an account? Login!</a>
                         </div>
                     </div>
                 </div>

@@ -47,7 +47,7 @@ class HomeController extends Controller
     public function edit(Home $home)
     {
         return view('dashboard.pages.edit.edit-home', [
-            'landing' => Home::all(),
+            'landing' => $home,
         ]);
     }
 
@@ -56,7 +56,22 @@ class HomeController extends Controller
      */
     public function update(Request $request, Home $home)
     {
-        //
+        $formFields = request()->validate([
+            'heading' => 'required',
+            'para' => 'required',
+            'image' => 'sometimes'
+        ]);
+
+
+        if (request()->hasFile('image')) {
+            $formFields['image'] = request()->file('image')->store('publishes', 'public');
+        }
+
+        if ($home->update($formFields)) {
+            return redirect('dashboard/home-page')->with('message', 'You have successfully update home page');
+        } else {
+            echo "error";
+        }
     }
 
     /**

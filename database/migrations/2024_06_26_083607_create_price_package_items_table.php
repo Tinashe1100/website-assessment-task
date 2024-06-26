@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('price_package_items', function (Blueprint $table) {
             $table->id();
             $table->string('item_name');
-            $table->boolean('item_availabilty');
+            $table->boolean('item_availability');
             // foreign key constrains
             $table->foreignId('package_id')->constrained('pricings', 'id')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
