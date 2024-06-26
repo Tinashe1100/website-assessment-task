@@ -3,7 +3,7 @@
         <div class="row justify-content-center py-5 g-4">
             @foreach ($about as $item)
                 <div class="col-lg-6">
-                    <img src={{ asset('storage/' . $item->imagey) }} alt="about-img" class="img-fluid p-2 ">
+                    <img src={{ asset('storage/' . $item->image) }} alt="about-img" class="img-fluid p-2 ">
                 </div>
 
                 <div class="col-lg-6 my-auto">

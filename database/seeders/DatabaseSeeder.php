@@ -40,6 +40,26 @@ class DatabaseSeeder extends Seeder
             'name' => "Refreshing Design",
             'details' => "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium, omnis aliquid. Facilis qui culpa omnis id?",
         ]);
+        Service::create([
+            'name' => "Refreshing Design",
+            'details' => "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium, omnis aliquid. Facilis qui culpa omnis id?",
+        ]);
+        Service::create([
+            'name' => "Refreshing Design",
+            'details' => "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium, omnis aliquid. Facilis qui culpa omnis id?",
+        ]);
+        Pricing::create([
+            'package_name' => "Standard",
+            'package_desc' => "Lorem Ipsum is simply dummy text of the printing and industry.",
+            'package_cta' => "START FREE TRIAL",
+            'package_price' => '50'
+        ]);
+        Pricing::create([
+            'package_name' => "Standard",
+            'package_desc' => "Lorem Ipsum is simply dummy text of the printing and industry.",
+            'package_cta' => "START FREE TRIAL",
+            'package_price' => '50'
+        ]);
         Pricing::create([
             'package_name' => "Standard",
             'package_desc' => "Lorem Ipsum is simply dummy text of the printing and industry.",
