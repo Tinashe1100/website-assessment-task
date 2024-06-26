@@ -51,7 +51,7 @@
                             <a class="small" href="forgot-password.html">Forgot Password?</a>
                         </div> --}}
                         <div class="text-center">
-                            <a class="small" href="register">Already have an account? Login!</a>
+                            <a class="small" href="register">Don't have account? Register!</a>
                         </div>
                     </div>
                 </div>
