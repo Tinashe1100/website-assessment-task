@@ -22,6 +22,6 @@
             </form>
         </div>
 
-        <a href="/services-page" class="link-primary">See services</a>
+        <a href="/dashboard/services-page" class="link-primary">See services</a>
     </div>
 </x-dashboard>

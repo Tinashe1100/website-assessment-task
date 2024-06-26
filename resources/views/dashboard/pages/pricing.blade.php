@@ -25,15 +25,18 @@
                             class="btn btn-outline-primary px-4 fw-semibold my-3">{{ $item->package_cta }}</a>
 
                         <x-package-items :packageItems="$package_items" />
+                        <br>
+                        <a href="add-package-item" class="card-link link-danger">Add package item</a>
 
                     </div>
                     <div class="card-footer bg-transparent">
                         <div class="clearfix">
-                            <a href="dashboard/edit-package/" class="btn btn-success float-start">Edit</a>
+                            <a href="edit-package/{{ $item->id }}" class="btn btn-success float-start">Edit
+                                package</a>
                             <form action="">
                                 <button class="btn btn-danger float-end">
                                     <i class="bi bi-trash"></i>
-                                    Delete
+                                    Delete package
                                 </button>
                             </form>
                         </div>
@@ -44,6 +47,6 @@
 
     </div>
 
-    <a href="/dashboard/add-pricing" class="mt-4 btn btn-primary">Create new</a>
+    <a href="add-pricing" class="mt-4 btn btn-primary">Create package</a>
 
 </x-dashboard>

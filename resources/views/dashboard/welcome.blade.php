@@ -43,7 +43,7 @@
 
                 </div>
                 <div class="card-footer">
-                    <a href="/services-page" class="text-primary">See more</a>
+                    <a href="/dashboard/services-page" class="text-primary">See more</a>
                 </div>
             </div>
         </div>

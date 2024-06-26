@@ -42,7 +42,7 @@ class PricePackageItemController extends Controller
         ]);
 
         PricePackageItem::create($formfields);
-        return back();
+        return redirect('/dashboard/pricing')->with('message', 'Package item created successfully');
     }
 
     /**

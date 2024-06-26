@@ -6,37 +6,17 @@
                     Services
                 </span>
             </div>
-
-            <div class="col-lg-4">
-                <div class="item border py-4 px-4 rounded-3 shadow-sm">
-                    <div class="icon ">
-                        <i class="bi bi-capsule p-2 fs-2 text-primary"></i>
+            @foreach ($services as $service)
+                <div class="col-lg-4">
+                    <div class="item border py-4 px-4 rounded-3 shadow-sm">
+                        <div class="icon ">
+                            <i class="bi bi-capsule p-2 fs-2 text-primary"></i>
+                        </div>
+                        <h4>{{ $service->name }}</h4>
+                        <p>{{ $service->details }}</p>
                     </div>
-                    <h4>Refreshing Design</h4>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium, omnis aliquid. Facilis qui
-                        culpa omnis id?</p>
                 </div>
-            </div>
-            <div class="col-lg-4">
-                <div class="item border py-4 px-4 rounded-3 shadow-sm">
-                    <div class="icon ">
-                        <i class="bi bi-capsule p-2 fs-2 text-primary"></i>
-                    </div>
-                    <h4>Refreshing Design</h4>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium, omnis aliquid. Facilis qui
-                        culpa omnis id?</p>
-                </div>
-            </div>
-            <div class="col-lg-4">
-                <div class="item border py-4 px-4 rounded-3 shadow-sm">
-                    <div class="icon ">
-                        <i class="bi bi-capsule p-2 fs-2 text-primary"></i>
-                    </div>
-                    <h4>Refreshing Design</h4>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium, omnis aliquid. Facilis qui
-                        culpa omnis id?</p>
-                </div>
-            </div>
+            @endforeach
         </div>
     </div>
 </section>

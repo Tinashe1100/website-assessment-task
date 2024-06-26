@@ -2,7 +2,7 @@
 
 <ul class="list-unstyled text-start row gy-2">
     @foreach ($packageItems as $item)
-        <li class="col-12 {{ $item->item_name ? 'text-primary' : 'text-secondary' }}">
+        <li class="col-12 {{ $item->item_availability ? 'text-primary' : 'text-secondary' }}">
             <i class="bi bi-check-circle"></i>
             {{ $item->item_name }}
         </li>

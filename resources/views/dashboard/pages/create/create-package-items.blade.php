@@ -7,7 +7,7 @@
                     class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
         </div>
         <div class="col-lg-4">
-            <form action="/dashboard/create-package-item" method="post" class="row gy-3 form-group">
+            <form action="create-package-item" method="post" class="row gy-3 form-group">
                 @csrf
                 <div class="col-12">
                     <select class="form-select" aria-label="Default select example" name="package_id">

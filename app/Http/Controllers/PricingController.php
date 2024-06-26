@@ -27,7 +27,7 @@ class PricingController extends Controller
      */
     public function create()
     {
-        //
+        return view('dashboard.pages.create.create-price-package');
     }
 
     /**
@@ -35,7 +35,15 @@ class PricingController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = request()->validate([
+            'package_name' => 'required',
+            'package_price' => 'required',
+            'package_desc' => 'required',
+            'package_cta' => 'required'
+        ]);
+
+        Pricing::create($data);
+        return redirect('/dashboard/pricing')->with('message', 'You have successfully created a new package');
     }
 
     /**
@@ -51,7 +59,9 @@ class PricingController extends Controller
      */
     public function edit(Pricing $pricing)
     {
-        //
+        return view('dashboard.pages.edit.edit-price-package', [
+            'package' => $pricing
+        ]);
     }
 
     /**
@@ -59,7 +69,15 @@ class PricingController extends Controller
      */
     public function update(Request $request, Pricing $pricing)
     {
-        //
+        $data = request()->validate([
+            'package_name' => 'required',
+            'package_price' => 'required',
+            'package_desc' => 'required',
+            'package_cta' => 'required'
+        ]);
+
+        $pricing->update($data);
+        return redirect('/dashboard/pricing')->with('message', 'You have successfully update the' . $pricing->package_name . 'package');
     }
 
     /**

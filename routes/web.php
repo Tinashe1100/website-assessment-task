@@ -7,7 +7,12 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PricePackageItemController;
 use App\Http\Controllers\PricingController;
 use App\Http\Controllers\ServiceController;
+use App\Models\About;
 use App\Models\CallToAction;
+use App\Models\Home;
+use App\Models\PricePackageItem;
+use App\Models\Pricing;
+use App\Models\Service;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,14 +27,16 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('welcome', [
+        'landing' => Home::all(),
+        'about' => About::all(),
+        'services' => Service::all(),
+        'packages' => Pricing::all(),
+        'package_items' => PricePackageItem::all(),
+        'ctas' => CallToAction::all(),
+    ]);
 });
 
-// Route::get('/dashboard', function () {
-//     return view('dashboard/welcome', [
-//         'cta' => CallToAction::all(),
-//     ]);
-// })->middleware('auth')->name('/login');
 
 // Group middleware dashboard routing
 Route::middleware('auth')->group(function () {
@@ -70,6 +77,10 @@ Route::controller(ServiceController::class)->group(function () {
 
 Route::controller(PricingController::class)->group(function () {
     Route::get('/dashboard/pricing', 'index');
+    Route::get('/dashboard/add-pricing', 'create');
+    Route::get('dashboard/edit-package/{pricing}', 'edit');
+    Route::put('/update-package/{pricing}', 'update');
+    Route::post('/dashboard/create-package', 'store');
 });
 
 Route::controller(PricePackageItemController::class)->group(function () {

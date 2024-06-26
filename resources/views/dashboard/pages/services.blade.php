@@ -44,7 +44,7 @@
                 </tbody>
             </table>
 
-            <a href="/add-service" class="btn btn-primary">Add new</a>
+            <a href="/dashboard/add-service" class="btn btn-primary">Add new</a>
         </div>
     </div>
 </x-dashboard>
