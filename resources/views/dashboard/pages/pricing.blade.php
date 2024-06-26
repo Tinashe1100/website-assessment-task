@@ -7,6 +7,8 @@
     </div>
     <div class="row  text-center g-3">
 
+        @include('dashboard.components.flash-message')
+
         @foreach ($pricings as $item)
             <div class="col-lg-4">
                 <div class="card p-4 shadow-sm border-0">
@@ -33,7 +35,9 @@
                         <div class="clearfix">
                             <a href="edit-package/{{ $item->id }}" class="btn btn-success float-start">Edit
                                 package</a>
-                            <form action="">
+                            <form action="/delete-package/{{ $item->id }}" method="post">
+                                @csrf
+                                @method('DELETE')
                                 <button class="btn btn-danger float-end">
                                     <i class="bi bi-trash"></i>
                                     Delete package

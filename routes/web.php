@@ -83,6 +83,7 @@ Route::controller(PricingController::class)->group(function () {
     Route::get('dashboard/edit-package/{pricing}', 'edit');
     Route::put('/update-package/{pricing}', 'update');
     Route::post('/dashboard/create-package', 'store');
+    Route::delete('/delete-package/{pricing}', 'destroy');
 });
 
 Route::controller(PricePackageItemController::class)->group(function () {

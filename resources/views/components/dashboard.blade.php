@@ -65,6 +65,9 @@
     <!-- Logout Modal-->
     @include('dashboard.components.logout-modal')
 
+    <!-- Alpine JS Files -->
+    <script src="//unpkg.com/alpinejs" defer></script>
+
     <!-- Bootstrap core JavaScript-->
     <script src={{ asset('assets/vendor/jquery/jquery.min.js') }}></script>
     <script src={{ asset('assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}></script>

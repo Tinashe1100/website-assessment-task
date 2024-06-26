@@ -36,7 +36,7 @@ class ServiceController extends Controller
         ]);
 
         Service::create($formFields);
-        return redirect('/services-page')->with('message', 'New service create');
+        return redirect('/dashboard/services-page')->with('message', 'New service created');
     }
 
     /**
@@ -68,7 +68,7 @@ class ServiceController extends Controller
         ]);
 
         $service->update($formFields);
-        return back()->with('message', 'You have successfully update service' . $service->name);
+        return back()->with('message', 'You have successfully updated service' . $service->name);
     }
 
     /**
@@ -77,6 +77,6 @@ class ServiceController extends Controller
     public function destroy(Service $service)
     {
         $service->delete();
-        return redirect('/dashboard/services-page')->with('status', "You have successfully deleted $service->name");
+        return redirect('/dashboard/services-page')->with('message', "You have successfully deleted $service->name");
     }
 }

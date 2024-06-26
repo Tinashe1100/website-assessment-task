@@ -77,7 +77,7 @@ class PricingController extends Controller
         ]);
 
         $pricing->update($data);
-        return redirect('/dashboard/pricing')->with('message', 'You have successfully update the' . $pricing->package_name . 'package');
+        return redirect('/dashboard/pricing')->with('message', 'You have successfully updated the' . ' ' . $pricing->package_name . ' package');
     }
 
     /**
@@ -85,6 +85,7 @@ class PricingController extends Controller
      */
     public function destroy(Pricing $pricing)
     {
-        //
+        $pricing->delete();
+        return redirect('/dashboard/pricing')->with('message', 'You have successfully delete the ' . $pricing->package_name . ' package');
     }
 }
