@@ -5,7 +5,9 @@ namespace Database\Seeders;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 use App\Models\About;
+use App\Models\CallToAction;
 use App\Models\Home;
+use App\Models\Pricing;
 use App\Models\Service;
 use Illuminate\Database\Seeder;
 
@@ -34,9 +36,21 @@ class DatabaseSeeder extends Seeder
         //     'para2' => "There are many variations od passages of Lorem Ipsum available, but the majority have in some form, by injected humor.",
         //     'image' => "landing page image"
         // ]);
-        Service::create([
-            'name' => "Refreshing Design",
-            'details' => "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium, omnis aliquid. Facilis qui culpa omnis id?",
+        // Service::create([
+        //     'name' => "Refreshing Design",
+        //     'details' => "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium, omnis aliquid. Facilis qui culpa omnis id?",
+        // ]);
+        // Pricing::create([
+        //     'package_name' => "Standard",
+        //     'package_desc' => "Lorem Ipsum is simply dummy text of the printing and industry.",
+        //     'package_cta' => "START FREE TRIAL",
+        //     'package_items' => "Cras justo odio., Dapibus ac facilisis in., Dapibus ac facilisis in., Excepteur sint occaecat velit.",
+        //     'package_price' => '50'
+        // ]);
+        CallToAction::create([
+            'heading' => "We love to make perfect solutions for your business",
+            'paragraph' => "Why I say old chap that is, spiffing off his nut cor blimey guvnords geeza bloke knees up bobby, sloshed arse William cack Richard. Bloke fanny around chesed of bum bag old lost the pilot say there spiffing off his nut.",
+            'cta_button' => 'GET STARTED'
         ]);
     }
 }

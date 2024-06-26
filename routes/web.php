@@ -1,8 +1,13 @@
 <?php
 
 use App\Http\Controllers\AboutController;
+use App\Http\Controllers\AuthenticationController;
+use App\Http\Controllers\CallToActionController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PricePackageItemController;
+use App\Http\Controllers\PricingController;
 use App\Http\Controllers\ServiceController;
+use App\Models\CallToAction;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,7 +26,16 @@ Route::get('/', function () {
 });
 
 Route::get('/dashboard', function () {
-    return view('dashboard/welcome');
+    return view('dashboard/welcome', [
+        'cta' => CallToAction::all(),
+    ]);
+});
+
+Route::controller(AuthenticationController::class)->group(function () {
+    Route::get('/register', 'create');
+    Route::post('/create-account', 'store');
+    Route::get('/signin', 'login');
+    Route::post('/login', 'authenticate');
 });
 
 Route::controller(HomeController::class)->group(function () {
@@ -41,4 +55,19 @@ Route::controller(ServiceController::class)->group(function () {
     Route::get('/edit-service/{service}', 'edit');
     Route::put('/update-service/{service}', 'update');
     Route::delete('/delete-service/{service}', 'destroy');
+});
+
+Route::controller(PricingController::class)->group(function () {
+    Route::get('/dashboard/pricing', 'index');
+});
+
+Route::controller(PricePackageItemController::class)->group(function () {
+    Route::get('/dashboard/package-items', 'index');
+    Route::get('/dashboard/add-package-item', 'create');
+    Route::post('/dashboard/create-package-item', 'store');
+});
+
+Route::controller(CallToActionController::class)->group(function () {
+    Route::get('/dashboard/edit-cta/{callToAction}', 'edit');
+    Route::put('/dashboard/update-cta/{cta}', 'update');
 });
