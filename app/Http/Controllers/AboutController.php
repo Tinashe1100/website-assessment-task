@@ -47,7 +47,7 @@ class AboutController extends Controller
     public function edit(About $about)
     {
         return view('dashboard.pages.edit.edit-about', [
-            'about' => $about->all(),
+            'about' => $about,
         ]);
     }
 
@@ -56,7 +56,23 @@ class AboutController extends Controller
      */
     public function update(Request $request, About $about)
     {
-        //
+        $formFields = request()->validate([
+            'heading' => 'required',
+            'para1' => 'required',
+            'para2' => 'required',
+            'image' => 'sometimes'
+        ]);
+
+
+        if (request()->hasFile('image')) {
+            $formFields['image'] = request()->file('image')->store('publishes', 'public');
+        }
+
+        if ($about->update($formFields)) {
+            return redirect('/about-page')->with('message', 'You have successfully update home page');
+        } else {
+            return back();
+        }
     }
 
     /**

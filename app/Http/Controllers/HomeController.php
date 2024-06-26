@@ -70,7 +70,7 @@ class HomeController extends Controller
         if ($home->update($formFields)) {
             return redirect('dashboard/home-page')->with('message', 'You have successfully update home page');
         } else {
-            echo "error";
+            return back();
         }
     }
 
