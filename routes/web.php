@@ -53,6 +53,7 @@ Route::controller(AuthenticationController::class)->group(function () {
     Route::post('/create-account', 'store');
     Route::get('/login', 'login')->name('login');
     Route::post('/authenticate', 'authenticate');
+    Route::post('/logout', 'logout');
 });
 
 Route::controller(HomeController::class)->group(function () {

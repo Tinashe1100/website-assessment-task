@@ -87,7 +87,7 @@ class AuthenticationController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request,)
+    public function update(Request $request)
     {
         //
     }
@@ -95,8 +95,14 @@ class AuthenticationController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy()
+    public function logout(Request $request)
     {
-        //
+        Auth::logout();
+
+        $request->session()->invalidate();
+
+        $request->session()->regenerateToken();
+
+        return redirect('/login');
     }
 }
