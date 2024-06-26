@@ -12,7 +12,7 @@
 
                 </div>
                 <div class="card-footer">
-                    <a href="/home-page" class="text-primary">See more</a>
+                    <a href="/dashboard/home-page" class="text-primary">See more</a>
                 </div>
             </div>
         </div>
@@ -28,7 +28,7 @@
 
                 </div>
                 <div class="card-footer">
-                    <a href="/about-page" class="text-primary">See more</a>
+                    <a href="/dashboard/about-page" class="text-primary">See more</a>
                 </div>
             </div>
         </div>

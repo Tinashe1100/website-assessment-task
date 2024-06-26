@@ -77,6 +77,6 @@ class ServiceController extends Controller
     public function destroy(Service $service)
     {
         $service->delete();
-        return redirect('/services-page')->with('status', "You have successfully deleted $service->name");
+        return redirect('/dashboard/services-page')->with('status', "You have successfully deleted $service->name");
     }
 }

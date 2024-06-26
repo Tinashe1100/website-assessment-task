@@ -69,7 +69,7 @@ class AboutController extends Controller
         }
 
         if ($about->update($formFields)) {
-            return redirect('/about-page')->with('message', 'You have successfully update home page');
+            return redirect('/dashboard/about-page')->with('message', 'You have successfully update home page');
         } else {
             return back();
         }

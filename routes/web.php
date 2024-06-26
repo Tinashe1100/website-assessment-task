@@ -63,7 +63,7 @@ Route::controller(HomeController::class)->group(function () {
 });
 
 Route::controller(AboutController::class)->group(function () {
-    Route::get('/about-page', 'index');
+    Route::get('/dashboard/about-page', 'index');
     Route::get('/dashboard/edit-about/{about}', 'edit');
     Route::put('/update-about/{about}', 'update');
 });
