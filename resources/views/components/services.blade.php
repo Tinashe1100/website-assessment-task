@@ -1,5 +1,5 @@
 <section class="services" id="services">
-    <div class="container">
+    <div class="container py-5">
         <div class="row justify-content-center py-5 g-4">
             <div class="mb-5 section-title text-center">
                 <span class="btn btn-outline-primary fw-semibold px-4 rounded-pill border-2">

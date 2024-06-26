@@ -1,5 +1,5 @@
-<section class="pricing" id="pricing">
-    <div class="container">
+<section class="mt-5 pricing" id="pricing">
+    <div class="container py-5">
         <div class="row text-center justify-content-center py-5 g-4">
             <div class="mb-5 section-title">
                 <span class="btn btn-outline-primary fw-semibold px-4 rounded-pill border-2">
