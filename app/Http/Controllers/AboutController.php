@@ -4,16 +4,18 @@ namespace App\Http\Controllers;
 
 use App\Models\About;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class AboutController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(About $about)
     {
+        $about = DB::table('abouts')->select('id', 'heading', 'image', 'para1', 'para2')->get();
         return view('dashboard.pages.about', [
-            'about' => About::all(),
+            'about' => $about
         ]);
     }
 
@@ -68,11 +70,8 @@ class AboutController extends Controller
             $formFields['image'] = request()->file('image')->store('publishes', 'public');
         }
 
-        if ($about->update($formFields)) {
-            return redirect('/dashboard/about-page')->with('message', 'You have successfully update home page');
-        } else {
-            return back();
-        }
+        $about->update($formFields);
+        return redirect('/dashboard/about-page')->with('message', 'You have successfully updated the about page');
     }
 
     /**

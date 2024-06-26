@@ -24,7 +24,7 @@
                     <input type="file" name="image" id="" class="form-control">
                 </div>
                 <div class="col-12">
-                    <input type="text" class="form-control" name="heading" value={{ $landing->heading }}>
+                    <input type="text" class="form-control" name="heading" value="{{ $landing->heading }}">
                 </div>
                 <div class="col-12">
                     <textarea name="para" id="" cols="30" rows="5" class="form-control">{{ $landing->para }}</textarea>

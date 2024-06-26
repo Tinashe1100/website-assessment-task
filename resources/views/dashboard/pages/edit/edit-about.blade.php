@@ -18,7 +18,7 @@
                 </div>
                 <div class="col-12">
                     <label for="">About us heading</label>
-                    <input type="text" class="form-control" name="heading" value={{ $about->heading }}>
+                    <input type="text" class="form-control" name="heading" value="{{ $about->heading }}">
                 </div>
                 <div class="col-12">
                     <label for="">First Paragraph</label>

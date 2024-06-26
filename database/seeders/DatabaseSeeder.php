@@ -79,7 +79,7 @@ class DatabaseSeeder extends Seeder
             'package_price' => '50'
         ]);
         CallToAction::create([
-            'heading' => "We love to make perfect solutions for your business",
+            'heading' => 'We love to make perfect solutions for your business',
             'paragraph' => "Why I say old chap that is, spiffing off his nut cor blimey guvnords geeza bloke knees up bobby, sloshed arse William cack Richard. Bloke fanny around chesed of bum bag old lost the pilot say there spiffing off his nut.",
             'cta_button' => 'GET STARTED'
         ]);

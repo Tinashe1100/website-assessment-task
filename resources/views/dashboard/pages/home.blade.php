@@ -1,5 +1,6 @@
 <x-dashboard>
     <div class="row">
+        @include('dashboard.components.flash-message')
         <div class="col-lg-6">
             <div class="card mb-3">
                 @foreach ($landing as $item)

@@ -1,5 +1,6 @@
 <section class="about" id="about">
     <div class="container">
+
         <div class="row justify-content-center py-5 g-4">
             @foreach ($about as $item)
                 <div class="col-lg-6">
