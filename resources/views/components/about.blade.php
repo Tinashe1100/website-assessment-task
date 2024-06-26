@@ -11,9 +11,12 @@
                     <h1>
                         {{ $item->heading }}
                     </h1>
-                    <a href="" class="btn btn-primary about-link-1">Who We Are</a>
-                    <a href="" class="btn btn-primary about-link-2">Our Vision</a>
-                    <a href="" class="btn btn-primary about-link-3">Our History</a>
+
+                    <div class="my-3 p-3 fs-4 rounded-3" style="background-color: #f4f4f4">
+                        <span class="badge text-bg-primary">Who We Are</span>
+                        <span class="badge text-bg-primary">Our Vision</span>
+                        <span class="badge text-bg-primary">Our History</span>
+                    </div>
 
                     <p class="about-us">
                         {{ $item->para1 }}
