@@ -12,7 +12,7 @@
                         {{ $item->heading }}
                     </h1>
 
-                    <div class="my-3 p-3 fs-4 rounded-3" style="background-color: #f4f4f4">
+                    <div class="my-3 p-3 fs-4 rounded-3" style="background-color: #f5f4f4">
                         <span class="badge text-bg-primary">Who We Are</span>
                         <span class="badge text-bg-primary">Our Vision</span>
                         <span class="badge text-bg-primary">Our History</span>
